@@ -1,0 +1,106 @@
+REM Bijlage 4 Populate FitNu
+REM De populatie van het domein
+
+REM Add OUs
+
+
+dsadd ou ou=Management,dc=fitnu,dc=local
+
+dsadd ou ou=Administratie,dc=fitnu,dc=local
+
+
+dsadd ou ou=ICTbeheer,dc=fitnu,dc=local
+
+
+dsadd ou ou=Instructeurs,dc=fitnu,dc=local
+
+
+dsadd ou ou=Sportmedisch,dc=fitnu,dc=local
+
+
+dsadd ou ou=Techniek,dc=fitnu,dc=local
+
+
+dsadd ou ou=Trainers,dc=fitnu,dc=local
+
+
+dsadd ou ou=Utrecht,dc=fitnu,dc=local
+dsadd ou ou=Amsterdam,dc=fitnu,dc=local
+
+dsadd ou "ou=fincancien,ou=administratie,dc=fitnu,dc=local"
+dsadd ou "ou=Receptie,ou=administratie,dc=fitnu,dc=local"
+dsadd ou "ou=Utrecht,ou=Instructeurs,dc=fitnu,dc=local"
+dsadd ou "ou=Amsterdam,ou=Instructeurs,dc=fitnu,dc=local"
+dsadd ou "ou=Utrecht,ou=Trainers,dc=fitnu,dc=local"
+dsadd ou "ou=Amsterdam,ou=Trainers,dc=fitnu,dc=local"
+
+
+
+
+REM Add Groups
+dsadd group cn=GGManagement,ou=Management,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGAdministratie,ou=Administratie,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGICTbeheer,ou=ICTbeheer,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGInstructeurs,ou=Instructeurs,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGSportmedisch,ou=Sportmedisch,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGTechniek,ou=Techniek,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGTrainers,ou=Trainers,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGfinancien,ou=financien,dc=fitnu,dc=local -scope g -secgrp yes
+
+dsadd group cn=GGreceptie,ou=,dc=fitnu,dc=local -scope g -secgrp yes
+
+
+
+
+
+
+
+REM Add Users
+dsadd user "cn=R de Vries,ou=Management,dc=fitnu,dc=local" -samid rdevries -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=ManagementGG,ou=Management,dc=fitnu,dc=local"
+dsadd user "cn=A Bokma,ou=Financien,dc=fitnu,dc=local" -samid abokma -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGFinancien,ou=Financien,dc=fitnu,dc=local"
+dsadd user "cn=A Willems,ou=Sportmedisch,dc=fitnu,dc=local" -samid awillems -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGSportmedisch,ou=Sportmedisch,dc=fitnu,dc=local"
+dsadd user "cn=E Guyk,ou=Administratie,dc=fitnu,dc=local" -samid eguyk -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGAdministratie,ou=Administratie,dc=fitnu,dc=local"
+dsadd user "cn=J de Vries,ou=Financien,dc=fitnu,dc=local" -samid jdevries -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGFinancien,ou=Financien,dc=fitnu,dc=local"
+dsadd user "cn=J de Ridder,ou=ICTbeheer,dc=fitnu,dc=local" -samid jderidder -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGICTbeheer,ou=ICTbeheer,dc=fitnu,dc=local"
+dsadd user "cn=M Deen,ou=Sportmedisch,dc=fitnu,dc=local" -samid mdeen -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGSportmedisch,ou=Sportmedisch,dc=fitnu,dc=local"
+dsadd user "cn=R Hattem,ou=ICTbeheer,dc=fitnu,dc=local" -samid rhattem -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGICTbeheer,ou=ICTbeheer,dc=fitnu,dc=local"
+dsadd user "cn=S hansen,ou=Administratie,dc=fitnu,dc=local" -samid shansen -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=GGAdministratie,ou=Administratie,dc=fitnu,dc=local"
+dsadd user "cn=,ou=,dc=fitnu,dc=local" -samid rdevries -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=ManagementGG,ou=Management,dc=fitnu,dc=local"
+dsadd user "cn=,ou=,dc=fitnu,dc=local" -samid rdevries -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=ManagementGG,ou=Management,dc=fitnu,dc=local"
+dsadd user "cn=,ou=,dc=fitnu,dc=local" -samid rdevries -pwd P@ssw0rd -pwdneverexpires yes -canchpwd no
+ -memberof "cn=ManagementGG,ou=Management,dc=fitnu,dc=local"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
